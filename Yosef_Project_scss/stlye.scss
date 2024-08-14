@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+
+
 body
     {
-    font-size: 20px; /* הגדרתי 20 כדי לשלוט ביחידות רים אחר כך */
+    font-size: 40px; /* הגדרתי 20 כדי לשלוט ביחידות רים אחר כך */
+    font-family: Space Grotesk;
     }
 
 
@@ -14,6 +18,7 @@ body
     }
 
 .nav_bar{ /* תפריט ניווט ראשי */
+  
   margin: 0 auto;
   height: 68px;
   align-items: center;
@@ -104,7 +109,7 @@ body
   height: 48px;
 
 
-  @media (max-width: 2560px) 
+  @media (max-width: 3000px) 
   {
     grid-template-columns: repeat(6,1fr);
 }
@@ -120,26 +125,23 @@ body
 
 .heading_and_subheading{   /* הכותרות באמצע */ 
   margin: 0 auto;
-  padding: 50px;
+  padding: 40px;
   display: grid;
   width: 1440px;
-  height: 51px;
+  height: auto;
+  grid-template-columns: 10% 90%;
   
   &_title{
     background-color: #B9FF66;
     font-size: 2rem;
-    width: 110px;
   }
     
   &_p{
-    font-size: 1rem;
+    padding-left: 10px;
+    font-size: 2rem;
+    word-wrap: break-word;
   }
 
-  @media (max-width: 2560px) 
-  {
-    grid-template-columns: repeat(1,1fr);
-    grid-template-columns: 10% 90%;
-}
 
   @media (max-width: 430px)
   {
@@ -157,8 +159,17 @@ body
     justify-content:space-around;
     gap: 40px;
 
+    @media (max-width: 430px) 
+    {
+      grid-template-columns: repeat(1,1fr);
+  }
+
+
+
       .card{
+        position: relative;
         display: grid;
+        overflow: hidden;
         width: 600px;
         height: 310px;
         border-radius: 45px;
@@ -168,18 +179,31 @@ body
         grid-template-columns: repeat(2,1fr);
 
         &_title{
+          font-family: Space Grotesk; 
           font-size: 2rem;
           color: rgb(0, 0, 0);
           padding: 40px;
+          @media (max-width: 430px) 
+          {
+            font-size: 1.5rem;
+        }
         }
 
         &_info{
-         margin: 0 auto;
-         padding-top: -20px;
+         margin: -10px 30px
         }
         &_img{
-      
+          @media (max-width: 430px) 
+          {
+            max-width: 100px;
+            max-height: 100px;
         }
+        }
+        @media (max-width: 430px) 
+        {
+          width: 330px;
+      }
+  
       }
   }
 
@@ -187,8 +211,211 @@ body
     background-color:#B9FF66;
   }
 
-  #black_card{
-    background-color:#191A23;
+#black_card{  /* קריאת מיוחד כדי לשנות רקע מלבן מסוים */
+  background-color: black;
+}
+
+  #black_card_text{ /* קריאת מיוחד כדי לשנות צבע טקסט מסוים */
+    color: white;
 
   }
 
+  .cta_container{  /* זה החלון של lets make things happen */
+    margin: 0 auto;
+      max-width: 1140px;
+      height: auto;
+      width: auto;
+      border-radius: 45px;
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      background-color: #F3F3F3;
+      padding: 20px;
+      overflow: hidden;
+
+      .text_and_button{
+        display: grid;
+        width: auto;
+        height: auto;
+
+        &_text{
+          font-size: 2rem;
+        }
+        p{
+          font-size: 1rem;
+        }
+
+      &_btn{
+        width: 228px;
+        height: 68px;
+        background-color: #191A23;
+        color: white;
+        border-radius: 14px;
+        text-align: center;
+        font-size: 1rem;
+        line-height: 60px;
+        cursor: pointer;
+        font-family: Space Grotesk;
+
+      } 
+      }
+
+      .picture{
+        max-width:359px;
+        max-height: 394px;
+        @media (max-width: 430px) 
+        {
+          display: none;
+      } 
+      }
+       }
+
+       .case_studies_block{  /* זה ה 3 מלבנים השחורים */
+        margin: 0 auto;
+          max-width: 700px;
+          height: auto;
+          width: auto;
+          border-radius: 45px;
+          display: grid;          
+          grid-template-columns: repeat(5,1fr);
+          background-color: #191A23;
+          padding: 56px;
+          overflow: hidden;
+          gap: 64px;
+
+          @media (max-width: 430px) 
+          {
+            grid-template-columns: repeat(1,1fr);
+        } 
+    
+          .text_and_button{
+            padding: 8px;
+            border: 1px solid rgb(255, 255, 255);
+            display: grid;
+            width: auto;
+            height: auto;
+    
+            p{
+              font-size: 1rem;
+              color: rgb(255, 255, 255);
+            }
+    
+          &_btn {        /*  פה אני שולט בכפתור LEARN MORE אם צריך משהו*/
+            
+    
+          } 
+          }
+    
+          .line_pic{
+            max-width:1px;
+            max-height: 186px;
+  
+            @media (max-width: 430px) 
+            {
+              display: none;
+          } 
+
+           }
+          }
+ 
+.process_block{       /*   אלה השש מלבנים עם הפלוס והמינוס */
+  display: grid;
+  gap: 30px; 
+
+    .card{
+      width: auto;
+      border: 1px solid black;
+      margin: 0 auto;
+      max-width: 1234px;
+      background-color: #F3F3F3;
+       display: grid;
+       grid-template-columns: repeat(3,1fr);
+       border-radius: 14px;;
+       box-shadow: 0.2rem 0.2rem;
+
+        &_number{
+          font-size: 3rem;
+        }
+
+        &_title{
+          font-size: 1.5rem;
+        }
+
+      &_info{
+        font-size: 1rem;
+      }
+
+      &_icon{
+   
+      }
+    }
+
+
+   .line{
+
+   }
+
+   .card01_text{
+    font-size: 1rem;
+   }
+
+   
+}
+
+.group_of_cards{
+  max-width: 1441px;
+  max-height: 331px;
+  height: auto;
+  width: auto;
+  display: grid;
+  margin: 0 auto;
+  gap: 20px;
+  grid-template-columns: repeat(3,1fr);
+    
+  @media (max-width: 430px) 
+  {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+} 
+  
+    .card{  /* הפרופלים של האנשים */
+      margin: 0 auto;
+      max-width: 387px;
+      max-height: 331px;
+      width: auto;
+      height: auto;
+      border: 1px solid black;
+      border-radius: 45px;
+      box-shadow: 0.2rem 0.2rem;
+      background-color: #F3F3F3;
+      padding: 20px;
+      overflow: hidden;
+      
+           .person{
+            display: flex;
+            &_pic_profile{
+
+              }
+
+             &_name{
+             font-size: 1rem;
+             padding-left: 20px;;
+            }
+
+            &_icon{
+              padding-left: 90px;
+              position: relative;
+              object-fit: cover;
+           }
+
+       }
+
+       .line{
+   
+       }
+
+       .information{
+        font-size: 1rem;
+
+     }
+    }
+  }

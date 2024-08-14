@@ -1,7 +1,9 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap");
 body {
-  font-size: 20px;
+  font-size: 40px;
   /* הגדרתי 20 כדי לשלוט ביחידות רים אחר כך */
+  font-family: Space Grotesk;
 }
 
 #nav_bar_mobile {
@@ -101,7 +103,7 @@ body {
   width: 1440px;
   height: 48px;
 }
-@media (max-width: 2560px) {
+@media (max-width: 3000px) {
   .logotypes {
     grid-template-columns: repeat(6, 1fr);
   }
@@ -116,24 +118,20 @@ body {
 .heading_and_subheading {
   /* הכותרות באמצע */
   margin: 0 auto;
-  padding: 50px;
+  padding: 40px;
   display: grid;
   width: 1440px;
-  height: 51px;
+  height: auto;
+  grid-template-columns: 10% 90%;
 }
 .heading_and_subheading_title {
   background-color: #B9FF66;
   font-size: 2rem;
-  width: 110px;
 }
 .heading_and_subheading_p {
-  font-size: 1rem;
-}
-@media (max-width: 2560px) {
-  .heading_and_subheading {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-columns: 10% 90%;
-  }
+  padding-left: 10px;
+  font-size: 2rem;
+  word-wrap: break-word;
 }
 @media (max-width: 430px) {
   .heading_and_subheading {
@@ -152,8 +150,15 @@ body {
   justify-content: space-around;
   gap: 40px;
 }
+@media (max-width: 430px) {
+  .services_block {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .services_block .card {
+  position: relative;
   display: grid;
+  overflow: hidden;
   width: 600px;
   height: 310px;
   border-radius: 45px;
@@ -163,19 +168,206 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 .services_block .card_title {
+  font-family: Space Grotesk;
   font-size: 2rem;
   color: black;
   padding: 40px;
 }
-.services_block .card_info {
-  margin: 0 auto;
-  padding-top: -20px;
+@media (max-width: 430px) {
+  .services_block .card_title {
+    font-size: 1.5rem;
+  }
 }
+.services_block .card_info {
+  margin: -10px 30px;
+}
+@media (max-width: 430px) {
+  .services_block .card_img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+@media (max-width: 430px) {
+  .services_block .card {
+    width: 330px;
+  }
+}
+
 #green_card {
   /* קריאת מיוחד כדי לשנות רקע מלבן מסוים */
   background-color: #B9FF66;
 }
 
 #black_card {
+  /* קריאת מיוחד כדי לשנות רקע מלבן מסוים */
+  background-color: black;
+}
+
+#black_card_text {
+  /* קריאת מיוחד כדי לשנות צבע טקסט מסוים */
+  color: white;
+}
+
+.cta_container {
+  /* זה החלון של lets make things happen */
+  margin: 0 auto;
+  max-width: 1140px;
+  height: auto;
+  width: auto;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #F3F3F3;
+  padding: 20px;
+  overflow: hidden;
+}
+.cta_container .text_and_button {
+  display: grid;
+  width: auto;
+  height: auto;
+}
+.cta_container .text_and_button_text {
+  font-size: 2rem;
+}
+.cta_container .text_and_button p {
+  font-size: 1rem;
+}
+.cta_container .text_and_button_btn {
+  width: 228px;
+  height: 68px;
   background-color: #191A23;
+  color: white;
+  border-radius: 14px;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 60px;
+  cursor: pointer;
+  font-family: Space Grotesk;
+}
+.cta_container .picture {
+  max-width: 359px;
+  max-height: 394px;
+}
+@media (max-width: 430px) {
+  .cta_container .picture {
+    display: none;
+  }
+}
+
+.case_studies_block {
+  /* זה ה 3 מלבנים השחורים */
+  margin: 0 auto;
+  max-width: 700px;
+  height: auto;
+  width: auto;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background-color: #191A23;
+  padding: 56px;
+  overflow: hidden;
+  gap: 64px;
+}
+@media (max-width: 430px) {
+  .case_studies_block {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.case_studies_block .text_and_button {
+  padding: 8px;
+  border: 1px solid white;
+  display: grid;
+  width: auto;
+  height: auto;
+}
+.case_studies_block .text_and_button p {
+  font-size: 1rem;
+  color: white;
+}
+.case_studies_block .text_and_button_btn {
+  /*  פה אני שולט בכפתור LEARN MORE אם צריך משהו*/
+}
+.case_studies_block .line_pic {
+  max-width: 1px;
+  max-height: 186px;
+}
+@media (max-width: 430px) {
+  .case_studies_block .line_pic {
+    display: none;
+  }
+}
+
+.process_block {
+  /*   אלה השש מלבנים עם הפלוס והמינוס */
+  display: grid;
+  gap: 30px;
+}
+.process_block .card {
+  width: auto;
+  border: 1px solid black;
+  margin: 0 auto;
+  max-width: 1234px;
+  background-color: #F3F3F3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 14px;
+  box-shadow: 0.2rem 0.2rem;
+}
+.process_block .card_number {
+  font-size: 3rem;
+}
+.process_block .card_title {
+  font-size: 1.5rem;
+}
+.process_block .card_info {
+  font-size: 1rem;
+}
+.process_block .card01_text {
+  font-size: 1rem;
+}
+
+.group_of_cards {
+  max-width: 1441px;
+  max-height: 331px;
+  height: auto;
+  width: auto;
+  display: grid;
+  margin: 0 auto;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 430px) {
+  .group_of_cards {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.group_of_cards .card {
+  /* הפרופלים של האנשים */
+  margin: 0 auto;
+  max-width: 387px;
+  max-height: 331px;
+  width: auto;
+  height: auto;
+  border: 1px solid black;
+  border-radius: 45px;
+  box-shadow: 0.2rem 0.2rem;
+  background-color: #F3F3F3;
+  padding: 20px;
+  overflow: hidden;
+}
+.group_of_cards .card .person {
+  display: flex;
+}
+.group_of_cards .card .person_name {
+  font-size: 1rem;
+  padding-left: 20px;
+}
+.group_of_cards .card .person_icon {
+  padding-left: 90px;
+  position: relative;
+  object-fit: cover;
+}
+.group_of_cards .card .information {
+  font-size: 1rem;
 }
