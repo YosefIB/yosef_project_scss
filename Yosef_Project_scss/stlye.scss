@@ -129,7 +129,7 @@ body
   display: grid;
   width: 1440px;
   height: auto;
-  grid-template-columns: 10% 90%;
+  grid-template-columns: 20% 90%;
   
   &_title{
     background-color: #B9FF66;
@@ -145,7 +145,7 @@ body
 
   @media (max-width: 430px)
   {
-    grid-template-columns: 10% 14%;
+    grid-template-columns: 10% 12%;
   }
   }
 
@@ -163,8 +163,6 @@ body
     {
       grid-template-columns: repeat(1,1fr);
   }
-
-
 
       .card{
         position: relative;
@@ -230,7 +228,6 @@ body
       grid-template-columns: repeat(2,1fr);
       background-color: #F3F3F3;
       padding: 20px;
-      overflow: hidden;
 
       .text_and_button{
         display: grid;
@@ -279,7 +276,6 @@ body
           grid-template-columns: repeat(5,1fr);
           background-color: #191A23;
           padding: 56px;
-          overflow: hidden;
           gap: 64px;
 
           @media (max-width: 430px) 
@@ -361,11 +357,10 @@ body
    
 }
 
-.group_of_cards{
-  max-width: 1441px;
-  max-height: 331px;
-  height: auto;
-  width: auto;
+.group_of_cards{  /* מעטפת הפרופלים של האנשים */
+  width:1441px;
+  height:622px;
+  border: 1px solid red;
   display: grid;
   margin: 0 auto;
   gap: 20px;
@@ -373,11 +368,14 @@ body
     
   @media (max-width: 430px) 
   {
-    display: grid;
+    width: 300px;
+    height: 2124px;
     grid-template-columns: repeat(1,1fr);
 } 
-  
-    .card{  /* הפרופלים של האנשים */
+
+    .card{  /* הפרופלים של הא
+      נשים */
+      display: grid;
       margin: 0 auto;
       max-width: 387px;
       max-height: 331px;
@@ -388,7 +386,6 @@ body
       box-shadow: 0.2rem 0.2rem;
       background-color: #F3F3F3;
       padding: 20px;
-      overflow: hidden;
       
            .person{
             display: flex;
@@ -403,8 +400,6 @@ body
 
             &_icon{
               padding-left: 90px;
-              position: relative;
-              object-fit: cover;
            }
 
        }
@@ -420,11 +415,35 @@ body
     }
   }
 
-//   .Testimonials_block{
-//     img {
-//     display: block;
-//     margin-left: auto;
-//     margin-right: auto;
-// }
+  .Testimonials_block{
+    img {
+      display: grid;
+      padding: 10px;
+      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      max-height: 625px;
+      max-width: 1240px; // מונע מתמונה לחרוג מגודל המיכל שלה
+    }
+    
+}
 
-//   }
+.contack_block{
+  margin: 0 auto;
+  background-color:#F3F3F3;
+  width: auto;
+  height: auto;
+  max-width: 1240px;
+  max-height: 773px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(2,1fr);
+    .form{
+      padding: 30px;
+
+    }
+
+    .picture{
+      transform: scaleX(-1);
+    }
+  }

@@ -1,13 +1,59 @@
 .button_for_all {
   width: 228px;
   height: 68px;
-  background-color: #191A23;
-  color: white;
+  border: 1px solid black;
+  background-color: #ffffff;
+  color: black;
   border-radius: 14px;
   text-align: center;
   font-size: 1.5rem;
   line-height: 60px;
+  font-weight: bold;
   cursor: pointer;
   font-family: Space Grotesk;
   margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+.button_for_all:hover {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+.shiny-button {
+  text-align: center;
+  width: 150px;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 45px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.shiny-button:hover {
+  background-color: #ff5733;
+  box-shadow: 0 0 30px rgba(255, 87, 51, 0.8), 0 0 60px rgba(255, 87, 51, 0.6), 0 0 90px rgba(255, 87, 51, 0.4);
+  animation: sparkle 1.5s infinite ease-in-out;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 60px rgba(255, 255, 255, 0.6), 0 0 90px rgba(255, 255, 255, 0.4);
+  }
 }
