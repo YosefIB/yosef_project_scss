@@ -84,21 +84,8 @@ body
       text-align: center
     }
     &_img{
-      background-image: url(/Yosef_Project_scss/pictures/Illustration.png);
+      background-image: url(/Yosef_Project_scs22s/pictures/Illustration.png);
     }
-}
-
-
-
-.container {
-  display: flex;
-  justify-content: center;
-}
-
-.item {
-  background-color: #f0f0f0;
-  padding: 20px;
-  border: 1px solid #ddd;
 }
 
 .logotypes{     /* כל הלוגו של החברות */
@@ -165,6 +152,7 @@ body
   }
 
       .card{
+  
         position: relative;
         display: grid;
         overflow: hidden;
@@ -191,10 +179,12 @@ body
          margin: -10px 30px
         }
         &_img{
+  
           @media (max-width: 430px) 
           {
             max-width: 100px;
             max-height: 100px;
+            width: 400px;
         }
         }
         @media (max-width: 430px) 
@@ -360,7 +350,6 @@ body
 .group_of_cards{  /* מעטפת הפרופלים של האנשים */
   width:1441px;
   height:622px;
-  border: 1px solid red;
   display: grid;
   margin: 0 auto;
   gap: 20px;
@@ -438,12 +427,26 @@ body
   display: grid;
   gap: 30px;
   grid-template-columns: repeat(2,1fr);
+
+  @media (max-width: 430px) 
+  {
+    grid-template-columns: repeat(1,1fr);
+} 
+
+
     .form{
       padding: 30px;
+      font-size: rem;
 
     }
 
+
+    label{
+      font-size: 2rem;
+      padding: 11px;
+    }
+
     .picture{
-      transform: scaleX(-1);
+      transform: scaleX(-1);  //* הפכתי את התמונה
     }
   }
