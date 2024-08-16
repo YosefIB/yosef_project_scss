@@ -12,6 +12,14 @@ body {
 @media (max-width: 431px) {
   #nav_bar_mobile {
     background-image: url(/Yosef_Project_scss/pictures/logo_mobile.png);
+    background-position-x: 130px;
+    background-position-y: 10px;
+    background-repeat: no-repeat;
+    padding: 5px;
+    position: absolute;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -51,37 +59,51 @@ body {
   }
 }
 
-.header {
-  grid-template-columns: 50% 50%;
-  justify-items: center;
-  display: flex;
-  font-size: 20px;
+.cta_container2 {
+  /* זה החלון של lets make things happen */
   margin: 0 auto;
-  top: 5px;
-  background-color: #acb9df;
-  width: 1440px;
-  height: 515px;
+  max-width: 1140px;
+  height: auto;
+  width: auto;
+  border-radius: 45px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #F3F3F3;
+  padding: 20px;
 }
-.header_title {
-  font-size: 3rem;
-  margin: 10px;
+.cta_container2 .text_and_button {
+  display: grid;
+  width: auto;
+  height: auto;
 }
-.header_info {
+.cta_container2 .text_and_button_text {
+  font-size: 2rem;
+}
+.cta_container2 .text_and_button p {
   font-size: 1rem;
-  margin: 20px;
 }
-.header_button {
-  margin-top: 4rem;
-  color: white;
-  font-size: 1rem;
-  background-color: black;
-  width: 264px;
+.cta_container2 .text_and_button_btn {
+  width: 228px;
   height: 68px;
+  background-color: var(--black-color);
+  color: var(--white-color);
   border-radius: 14px;
   text-align: center;
+  font-size: 1rem;
+  line-height: 60px;
+  cursor: pointer;
+  font-family: Space Grotesk;
 }
-.header_img {
-  background-image: url(/Yosef_Project_scs22s/pictures/Illustration.png);
+.cta_container2 .picture {
+  max-width: 359px;
+  max-height: 394px;
+}
+@media (max-width: 430px) {
+  .cta_container2 .picture {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .logotypes {
@@ -114,7 +136,7 @@ body {
   grid-template-columns: 20% 90%;
 }
 .heading_and_subheading_title {
-  background-color: #B9FF66;
+  background-color: var(--green-color);
   font-size: 2rem;
 }
 .heading_and_subheading_p {
@@ -133,7 +155,7 @@ body {
   max-width: fit-content;
   max-height: fit-content;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: var(--white-color);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   justify-content: space-around;
@@ -185,7 +207,7 @@ body {
 
 #green_card {
   /* קריאת מיוחד כדי לשנות רקע מלבן מסוים */
-  background-color: #B9FF66;
+  background-color: var(--green-color);
 }
 
 #black_card {
@@ -195,7 +217,7 @@ body {
 
 #black_card_text {
   /* קריאת מיוחד כדי לשנות צבע טקסט מסוים */
-  color: white;
+  color: var(--white-color);
 }
 
 .cta_container {
@@ -224,8 +246,8 @@ body {
 .cta_container .text_and_button_btn {
   width: 228px;
   height: 68px;
-  background-color: #191A23;
-  color: white;
+  background-color: var(--black-color);
+  color: var(--white-color);
   border-radius: 14px;
   text-align: center;
   font-size: 1rem;
@@ -252,7 +274,7 @@ body {
   border-radius: 45px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  background-color: #191A23;
+  background-color: var(--black-color);
   padding: 56px;
   gap: 64px;
 }
@@ -393,6 +415,141 @@ body {
   font-size: 2rem;
   padding: 11px;
 }
+@media (max-width: 430px) {
+  .contack_block label {
+    font-size: 1rem;
+  }
+}
 .contack_block .picture {
   transform: scaleX(-1);
+}
+@media (max-width: 430px) {
+  .contack_block .picture {
+    display: none;
+  }
+}
+
+.footer_block {
+  background-color: var(--black-color);
+  gap: 20px;
+  padding: 70px;
+  width: auto;
+  height: auto;
+  max-width: 1241px;
+  max-height: 541px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 430px) {
+  .footer_block {
+    grid-template-columns: repeat(9, 1fr);
+    height: 946px;
+  }
+}
+.footer_block .logo {
+  background-image: url(/Yosef_Project_scss/pictures/logo_footer.png);
+  background-repeat: no-repeat;
+}
+@media (max-width: 430px) {
+  .footer_block .logo {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+.footer_block .navbar {
+  display: flex;
+  gap: 15px;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  flex-wrap: wrap;
+}
+@media (max-width: 430px) {
+  .footer_block .navbar {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+}
+.footer_block .navbar a {
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+.footer_block .icons {
+  background-image: url(/Yosef_Project_scss/pictures/Socialicons_new_new.png);
+  background-repeat: no-repeat;
+}
+.footer_block .contact_us {
+  background-color: var(--black-color);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  display: grid;
+}
+@media (max-width: 430px) {
+  .footer_block .contact_us {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 4;
+  }
+}
+.footer_block .contact_us_title {
+  background-color: var(--green-color);
+  font-size: 1.5rem;
+  display: inline-block;
+}
+.footer_block .contact_us_p {
+  font-size: 1.5rem;
+  color: var(--white-color);
+}
+.footer_block .join_subscribe {
+  background-color: #292A32;
+  grid-column-start: 3;
+  grid-column-end: 5;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 430px) {
+  .footer_block .join_subscribe {
+    display: grid;
+    grid-column-start: 4;
+    grid-column-end: 6;
+  }
+}
+.footer_block .join_subscribe_email {
+  width: 260px;
+  height: 67px;
+  border-radius: 45px;
+  color: var(--white-color);
+  border: 1px solid white;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.footer_block .join_subscribe_subscribe {
+  background-color: var(--green-color);
+  width: 260px;
+  height: 67px;
+  border-radius: 45px;
+  font-size: 1.5rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+.footer_block .pic_line {
+  background-image: url(/Yosef_Project_scss/pictures/line_footer.png);
+  background-repeat: no-repeat;
+}
+.footer_block .copyright {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  color: var(--white-color);
 }

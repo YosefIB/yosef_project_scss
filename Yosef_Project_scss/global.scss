@@ -34,6 +34,7 @@
 
  .shiny-button {
     text-align: center;
+    height: 50px;
     width: 150px;
     cursor: pointer;
     margin: 0 auto;
@@ -71,3 +72,8 @@
     }
   }
   
+  :root{
+    --green-color: #B9FF66;
+    --white-color: #FFFFFF;
+    --black-color: #191A23;
+  }
