@@ -35,11 +35,7 @@ function insert_jokes(){
        console.log(jokes);
         render_array(jokes);
 
-    }); 
-    
-    }
-
-
+    });  }
 
     function render_array(jokes2: Joke[]){
         const print_to_screen = document.getElementById("print_to_screen");
@@ -47,8 +43,11 @@ function insert_jokes(){
 
         print_to_screen.innerHTML = "";
 
-        jokes2.forEach(x=>{ print_to_screen.innerHTML+= `<div id="joke"> <br>" + `<h1>the joke is: ${x.joke}</h1>` + `<h2>from catagory: ${x.catagory}</h2>
-            <button onclick="delete_array(${x.id})">Delete</button>`})};
+        jokes2.forEach(x=>{ print_to_screen.innerHTML+= `<div id="joke"> <br> 
+            <h1>שמע בדיחה: ${x.joke}</h1>` + `<h2>קטיגוריה: ${x.catagory}</h2>
+            <button onclick="delete_array(${x.id})">Delete</button>
+            <input onkeydown="update_array(${x.id},event)"></input></div>`});
+        }
         
 
     function delete_array(id: number){
@@ -58,5 +57,29 @@ function insert_jokes(){
 
         jokes.splice(i_deleted, 1);
         render_array(jokes);
+    }
+
+    function update_array(id: number,event){
+        const joke_updated = jokes.findIndex(x=>x.id === id);
+        if (joke_updated === -1) return console.error();
+
+        if(event.key === 'Enter'){
+            jokes[joke_updated].joke = event.target.value;
+            render_array(jokes);
+        }
+    }
+
+    function filter_array(event : Event){
+        const seleted = event.target as HTMLSelectElement;
+        if (!seleted) return console.error();
+
+        const clear = document.getElementById("print_to_screen");
+        if (!clear) return console.error();
+        clear.innerHTML = "";
+
+        const the_value = seleted.value;
+
+        const filtered = jokes.filter(x=>x.catagory === the_value);
+        render_array(filtered);
     }
 
